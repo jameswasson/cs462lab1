@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>Temperatures</title>
+  <link href="C:/Users/James/Desktop/CS462/Lab5/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="C:/Users/James/Desktop/CS462/Lab5/sensor.js"></script>
+  <style type="text/css">
+    span.finished { cursor: pointer; color: blue; text-decoration: underline; }
+  </style>
+</head>
+<body ng-app="timing" ng-controller="MainCtrl">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<div class="page-header">
+  <h1>Temperatures</h1>
+</div>
+<div id="link-header">
+  <h2>Put link here</h2>
+  <a ng-href="profile.html?{{eci}}">Manage Profile</a>
+</div>
+<div id="current_temp-header">
+  <h2>Current Temperature</h2>
+</div>
+<form ng-controller="MainCtrl">
+ <div>The current temperature is {{most_recent_temp}}</div>
+</form>
+<div id="recent_temp-header">
+  <h2>Recent Temperatures</h2>
+</div>
+  <div ng-repeat="timing in timings | orderBy: '-ordinal'">
+    {{timing.temperature}} <a> degrees recorded at </a>
+    {{timing.timestamp}}
+  </div>
+</div>
+<div id="recent_temp-header">
+  <h2>Violations</h2>
+</div>
+</div>
+  <div ng-repeat="timing in violations | orderBy: '-ordinal'">
+    {{timing.temperature}} <a> degrees recorded at </a>
+    {{timing.timestamp}}
+  </div>
+</div>
+</div>
+</body>
+</html>

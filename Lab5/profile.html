@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>Profile</title>
+  <link href="C:/Users/James/Desktop/CS462/Lab5/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="C:/Users/James/Desktop/CS462/Lab5/profile.js"></script>
+  <style type="text/css">
+    span.finished { cursor: pointer; color: blue; text-decoration: underline; }
+  </style>
+</head>
+<body ng-app="timing" ng-controller="MainCtrl">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+<div class="page-header">
+  <h1>Profile</h1>
+</div>
+  <form ng-submit="changeProfile()" style = "margin-top:30px;">
+    <h2>Number</h2>>
+    <input type="text" ng-model="number" placeholder="number" autofocus></input>
+    <h2>Name</h2>>
+    <input type="text" ng-model="name" placeholder="name"></input>
+    <h2>Location</h2>>
+    <input type="text" ng-model="location" placeholder="location" autofocus></input>
+    <h2>Threshold</h2>>
+    <input type="text" ng-model="threshold" placeholder="threshold"></input>
+    <h2></h2>>
+    <button type="submit" focus-input>Save Changes</button>
+  </form>
+</div>
+</div>
+</body>
+</html>
